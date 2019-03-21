@@ -22,6 +22,10 @@ public class PlayerHealthManager : MonoBehaviour
     public AudioClip deathSound;
     private AudioSource audioSource;
 
+    [Header("Colliders")]
+    public BoxCollider2D boxCollider;
+    public GameObject groundChecker;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -58,6 +62,9 @@ public class PlayerHealthManager : MonoBehaviour
         audioSource.PlayOneShot(growSound);
 
         anim.runtimeAnimatorController = bigAnim as RuntimeAnimatorController;
+
+        boxCollider.size = new Vector2(.75f , 2f);
+        groundChecker.transform.position = new Vector2(groundChecker.transform.position.x, groundChecker.transform.position.y -.5f);
     }
     private void TransitionLittle()
     {
@@ -65,6 +72,9 @@ public class PlayerHealthManager : MonoBehaviour
         audioSource.PlayOneShot(shrinkSound);
 
         anim.runtimeAnimatorController = littleAnim as RuntimeAnimatorController;
+
+        boxCollider.size = new Vector2(.75f , 1f);
+        groundChecker.transform.position = new Vector2(groundChecker.transform.position.x, groundChecker.transform.position.y +.5f);
     }
     public void KillPlayer()
     {
