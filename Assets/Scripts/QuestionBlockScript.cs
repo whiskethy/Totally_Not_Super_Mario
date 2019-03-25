@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class QuestionBlockScript : MonoBehaviour
 {
+    public GameObject spawnItem;
     public int maxHitCount = 1;
     private int timesHit = 0;
     public Animator anim;
@@ -20,6 +21,10 @@ public class QuestionBlockScript : MonoBehaviour
             {
                 timesHit += 1;
                 
+                Vector3 temp = new Vector3(this.transform.position.x, this.transform.position.y + 1f, this.transform.position.z);
+
+                Instantiate(spawnItem, temp, this.transform.rotation);
+
                 if(timesHit == maxHitCount)
                 {
                     anim.SetBool("isEmpty", true);

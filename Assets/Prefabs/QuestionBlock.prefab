@@ -70,6 +70,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94c5390e33f110045ac249d725769c47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnItem: {fileID: 4304229627790993157, guid: 7d7ef56409dcd264cb0ae910aa90c813,
+    type: 3}
   maxHitCount: 1
   anim: {fileID: 0}
 --- !u!1 &5816294134272664160

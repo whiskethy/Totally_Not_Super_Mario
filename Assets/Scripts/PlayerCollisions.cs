@@ -14,7 +14,8 @@ public class PlayerCollisions : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        audioSource = GameObject.Find("Main Camera").GetComponent<AudioSource>();   
+        audioSource = GameObject.Find("Main Camera").GetComponent<AudioSource>();
+        scoreManager = GameObject.Find("GameManager").GetComponent<ScoreManager>();   
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
