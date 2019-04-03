@@ -80,6 +80,9 @@ public class PlayerHealthManager : MonoBehaviour
     {
         audioSource.Stop();
         audioSource.PlayOneShot(deathSound);
-        Destroy(player);
+
+        anim.SetBool("isDead", true);
+        anim.GetComponent<PlayerMovement>().enabled = false;
+        //Destroy(player);
     }
 }

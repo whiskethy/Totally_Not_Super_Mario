@@ -21,8 +21,14 @@ public class CameraFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CamPos = player.transform.position.x;
-        CamPos = Mathf.Clamp(CamPos, xMin, xMax);
-        this.transform.position = new Vector3(CamPos, this.transform.position.y, -10);
+        if(player){
+            CamPos = player.transform.position.x;
+            CamPos = Mathf.Clamp(CamPos, xMin, xMax);
+            this.transform.position = new Vector3(CamPos, this.transform.position.y, -10);
+        }
+        else
+        {
+            //Debug.Log("Player is not found");
+        }
     }
 }
