@@ -9,6 +9,7 @@ public class PlayerHealthManager : MonoBehaviour
     public PlayerState state;
 
     public GameObject player;
+    public Rigidbody2D rb;
     public int playerHealth;
 
     [Header("Animation")]
@@ -80,6 +81,12 @@ public class PlayerHealthManager : MonoBehaviour
     {
         audioSource.Stop();
         audioSource.PlayOneShot(deathSound);
+
+        player.gameObject.transform.position = new Vector3(player.transform.position.x, player.transform.position.y, -5f); //moves forward on Z to be above other things
+
+        rb.velocity = new Vector3(0, 1000f * Time.fixedDeltaTime); //move up
+
+        boxCollider.enabled = false; //turns off collider so it will fall through ground
 
         anim.SetBool("isDead", true);
         anim.GetComponent<PlayerMovement>().enabled = false;
