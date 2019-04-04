@@ -26,7 +26,7 @@ public class PlayerCollisions : MonoBehaviour
 
             EnemyScript enemy = other.gameObject.GetComponentInParent(typeof(EnemyScript)) as EnemyScript;
             scoreManager.addPoints(100);
-            Destroy(enemy.gameObject);
+            enemy.takeDamage();
         }
        
     }

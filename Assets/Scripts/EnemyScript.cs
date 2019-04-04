@@ -5,16 +5,21 @@ using UnityEngine;
 public class EnemyScript : MonoBehaviour
 {
 
+    public int health = 1;
+
     private PlayerHealthManager healthManager;
     public float moveSpeed = -200;
     private Rigidbody2D rb;
     public bool facingRight = false;
+
+    private Animator anim;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         healthManager = FindObjectOfType<PlayerHealthManager>();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -50,5 +55,18 @@ public class EnemyScript : MonoBehaviour
         Vector3 scale = transform.localScale;
         scale.x *= -1;
         transform.localScale = scale;
+    }
+
+    public void takeDamage()
+    {
+        health = health - 1;  
+
+        if(health <= 0)
+        {
+            anim.SetBool("isDead", true);
+            moveSpeed = 0f;
+            this.GetComponent<Collider2D>().enabled = false;
+            //Destroy(this.gameObject);
+        }
     }
 }
