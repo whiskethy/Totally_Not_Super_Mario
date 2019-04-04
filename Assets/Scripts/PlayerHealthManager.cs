@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealthManager : MonoBehaviour
 {
@@ -90,6 +91,16 @@ public class PlayerHealthManager : MonoBehaviour
 
         anim.SetBool("isDead", true);
         anim.GetComponent<PlayerMovement>().enabled = false;
+
+        StartCoroutine(LoadLevel());
         //Destroy(player);
+    }
+
+    IEnumerator LoadLevel()
+    {
+        //TODO: Add slow down between level changes?
+        yield return new WaitForSecondsRealtime(3f);
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

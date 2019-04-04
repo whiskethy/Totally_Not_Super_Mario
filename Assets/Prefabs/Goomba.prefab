@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 3643708975969614162}
   - component: {fileID: 3643708975969614173}
   - component: {fileID: 3643708975969614172}
-  - component: {fileID: 3643708975969614163}
   - component: {fileID: 3643708975969614160}
   - component: {fileID: 1669918875}
+  - component: {fileID: 5606075836792536704}
   m_Layer: 0
   m_Name: Goomba
   m_TagString: Enemy
@@ -97,7 +97,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.06307006}
+  m_Offset: {x: 0.0019335747, y: -0.12688017}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -108,23 +108,8 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.8738599}
+  m_Size: {x: 0.87238026, y: 0.74623966}
   m_EdgeRadius: 0
---- !u!114 &3643708975969614163
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3643708975969614175}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bfc7e503f7202e4a95d35d8e2f2ef2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 1
-  moveSpeed: 150
-  facingRight: 1
 --- !u!50 &3643708975969614160
 Rigidbody2D:
   serializedVersion: 4
@@ -165,6 +150,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5606075836792536704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3643708975969614175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfc7e503f7202e4a95d35d8e2f2ef2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1
+  moveSpeed: -150
+  facingRight: 0
 --- !u!1 &8956234498851306877
 GameObject:
   m_ObjectHideFlags: 0
