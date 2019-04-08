@@ -43,8 +43,13 @@ public class PlayerMovement : MonoBehaviour
             jump = true;
             anim.SetBool("isJumping", true);
             anim.SetBool("isIdle", false);
-            audioSource.PlayOneShot(littleJumpSound);
+            
+            if(controller.m_Grounded)
+            {
+                audioSource.PlayOneShot(littleJumpSound);
+            }    
         }
+
         if(Input.GetButtonDown("Sprint"))
         {
             sprint = true;
