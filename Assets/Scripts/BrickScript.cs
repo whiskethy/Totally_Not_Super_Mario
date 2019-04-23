@@ -29,3 +29,5 @@ public class BrickScript : MonoBehaviour
         
     }
 }
+
+//this is a meh comment
