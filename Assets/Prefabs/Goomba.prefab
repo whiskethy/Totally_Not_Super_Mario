@@ -165,6 +165,13 @@ MonoBehaviour:
   health: 1
   moveSpeed: -150
   facingRight: 0
+  downCheckDistance: 0.6
+  wallCheckDistance: 0.6
+  touchingWall: 0
+  forwardIsGround: 0
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!1 &8956234498851306877
 GameObject:
   m_ObjectHideFlags: 0
