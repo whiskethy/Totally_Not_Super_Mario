@@ -55,7 +55,11 @@ public class PlayerHealthManager : MonoBehaviour
     public void GiveHealth()
     {
         playerHealth = 2;
-        TransitionBig();
+        if(state == PlayerState.little)
+        {
+            TransitionBig();
+        }
+        
     }
 
     private void TransitionBig()
